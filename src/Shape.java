@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Shape {
     protected String color;
     protected boolean filled;

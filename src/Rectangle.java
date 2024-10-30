@@ -105,10 +105,8 @@ public class Rectangle extends Shape {
             return false;
         }
         Rectangle r = (Rectangle) o;
-        return this.topLeft == r.topLeft && this.width == r.width
-                && this.length == r.length
-                && Objects.equals(super.getColor(), r.getColor())
-                && this.isFilled() == r.isFilled();
+        return this.topLeft.equals(r.topLeft) && this.width == r.width
+                && this.length == r.length;
     }
 
     /**
@@ -117,8 +115,7 @@ public class Rectangle extends Shape {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(this.topLeft, this.length,
-                this.width, super.getColor(), super.isFilled());
+        return Objects.hash(this.topLeft, this.length, this.width);
     }
 
     /**

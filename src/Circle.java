@@ -101,8 +101,7 @@ public class Circle extends Shape {
             return false;
         }
         Circle c = (Circle) o;
-        return this.center == c.center && this.radius == c.radius
-                && super.getColor() == c.getColor() && super.isFilled() == c.isFilled();
+        return this.center.equals(c.center) && this.radius == c.radius;
     }
 
     /**
@@ -111,6 +110,6 @@ public class Circle extends Shape {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(radius, center, super.getColor(), super.isFilled());
+        return Objects.hash(radius, center);
     }
 }

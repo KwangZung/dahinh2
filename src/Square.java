@@ -64,15 +64,12 @@ public class Square extends Rectangle {
             return false;
         }
         Square s = (Square) o;
-        return this.getSide() == s.getSide() && super.getTopLeft() == s.getTopLeft()
-                && super.getColor().equals(s.getColor())
-                && super.isFilled() == s.isFilled();
+        return this.getSide() == s.getSide() && super.getTopLeft().equals(s.getTopLeft());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.getTopLeft(), this.getSide(),
-                super.getColor(), super.isFilled());
+        return Objects.hash(super.getTopLeft(), this.getSide());
     }
 
     @Override
